@@ -11,7 +11,7 @@
   --hero-bg: #d6e5fb;
   --heading-fontSize: 2rem;
   --text-gray-900: #212529;
-  
+  --color-secondary: #ff497c;
   --text-teal: #20c997;
   --small-text-color: #999;
   --heading-text-color: #0a1d37;
@@ -58,7 +58,12 @@ a {
   color: unset;
 }
 img{
-  padding: 60 0px;
+
   width: 100%;
   object-fit: cover;
+}
+
+button{
+  border: none;
+  outline: none;
 }

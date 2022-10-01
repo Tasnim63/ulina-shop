@@ -1,0 +1,34 @@
+.hero_section{
+   padding: 10px 0;
+   background: var(--card-bg-03); 
+
+}
+.hero_content h2{
+   color: var(--text-teal);
+   font-size: 2.5rem;
+   font-size: 600;
+   margin:20px 0 ;
+}
+.hero_content .hero_subtitle{
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+.hero_content p{
+    color: var(--small-text-color);
+    line-height: 28px;
+}
+.buy_btn{
+  
+    padding: 8px 20px;
+    border-radius: 5px;
+    background: var(--color-secondary);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.buy_btn a:hover{
+   color: white; 
+}
+.hero_content{
+    padding: 45px 0;
+}
