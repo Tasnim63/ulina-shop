@@ -5,6 +5,7 @@ import Helmet from '../components/Helmet/Helmet';
 import '../styles/home.css';
 import {Link} from 'react-router-dom'
 import { motion } from 'framer-motion';
+import Services from '../services/Services';
 export default function Home() {
   const year =new Date().getFullYear()
   return (
@@ -17,9 +18,9 @@ export default function Home() {
                     <p className="hero_subtitle">
                       Trending Product In {year}
                     </p>
-                    <h2>Smart Digital Products & Electronic Modern Devices</h2>
-                    <p>electronic commerce or e-commerce is simply the buying and selling of goods and services using the internet, when shopping online. However, the term is often used to describe all of a seller's efforts, when selling products directly to consumers.</p>
-                    <motion.button whileTap={{scale:1.2}} className='buy_btn'><Link to="/shop">SHOP NOW </Link></motion.button>
+                    <h2>Smart Digital Products </h2>
+                    <p>electronic commerce or e-commerce is simply the buying and selling of goods and.and selling of goods and </p>
+                    <motion.button whileTap={{scale:1.2}} className='buy_btn my-3'><Link to="/shop">SHOP NOW </Link></motion.button>
                   </div>
                 </Col>
                 <Col lg="6" md="6" >
@@ -30,6 +31,7 @@ export default function Home() {
             </Row>
           </Container>
     </section>
+    <Services/>
    </Helmet>
   )
 }
