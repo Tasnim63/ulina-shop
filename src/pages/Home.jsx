@@ -6,6 +6,7 @@ import '../styles/home.css';
 import {Link} from 'react-router-dom'
 import { motion } from 'framer-motion';
 import Services from '../services/Services';
+import ProductsList from '../components/UI/ProductsList';
 export default function Home() {
   const year =new Date().getFullYear()
   return (
@@ -32,6 +33,16 @@ export default function Home() {
           </Container>
     </section>
     <Services/>
+    <section className='trending_products my-5'>
+     <Container>
+      <Row>
+        <Col lg="12" className=' text-center'>
+         <h2 className='section_title'>Latest Products</h2>
+        </Col>
+        <ProductsList/>
+      </Row>
+     </Container>
+    </section>
    </Helmet>
   )
 }

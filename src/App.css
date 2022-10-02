@@ -67,3 +67,7 @@ button{
   border: none;
   outline: none;
 }
+.section_title{
+  color: #0a1d37;
+  font-weight: 600;
+}
