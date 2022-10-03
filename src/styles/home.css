@@ -32,3 +32,16 @@
 .hero_content{
     padding: 45px 0;
 }
+.timer_count{
+  
+   background: var(--card-bg-02); 
+   height: 300;
+}
+.timer_count img{
+width: 100% !important;
+object-fit: contain;
+}
+.store_btn a:hover{
+    color: var(--primary-color);
+    transition: .5s;
+}
