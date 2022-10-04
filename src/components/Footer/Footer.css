@@ -1,0 +1,16 @@
+.footer{
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background: var(--hero-bg);
+}
+.footer_text{
+    line-height: 30px;
+}
+.footer_quick_link ul li{
+background: transparent !important;
+background: var(--hero-bg);
+font-size: 1.1rem;
+}
+.footer_quick_link ul li a:hover{
+  color: rgb(109, 109, 109);  
+}
