@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import './clock.css'
 export default function Clock() {
   const [days,setDays]=useState();
   const [hours,setHours]=useState();
@@ -44,17 +44,17 @@ export default function Clock() {
             </div>  
             <span>:</span>
         </div>
-        <div className="clock_data d-flex align-items-center gap-3  my-3">
+        <div className="clock_data d-flex align-items-center  my-3">
           <div className=" text-center">
             <h1 className=" fs-1 mb-2">{minutes}</h1>
             <h5 className=" fs-5">Minutes</h5>
             </div>  
             <span>:</span>
         </div>
-        <div className="clock_data d-flex align-items-center gap-3  my-3">
+        <div className="clock_data d-flex align-items-center  my-3">
           <div className=" text-center">
             <h1 className=" fs-1 mb-2">{seconds}</h1>
-            <h5 className=" fs-5">Seconds</h5>
+            <h6 >Seconds</h6>
             </div>  
          
         </div>

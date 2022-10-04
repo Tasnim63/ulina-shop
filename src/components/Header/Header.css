@@ -119,3 +119,28 @@
     height: 60px;
   }
 }
+@media only screen and (max-width: 992px) {
+
+.hero_content h2{
+font-size: 2rem;
+}
+}
+@media only screen and (max-width: 768px) {
+
+.hero_content h2{
+font-size: 1.5rem;
+}
+.hero_content p{
+    font-size: .9rem;
+}
+.buy_btn{
+    font-size: .9rem;
+}
+
+}
+@media only screen and (max-width: 562px) {
+    .hero_content{
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+}
