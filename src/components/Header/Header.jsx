@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import { Container,Row } from "reactstrap";
-import "./Header.css";
-import navLogo from "../../assets/images/ulina-logo.png";
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { Container, Row } from "reactstrap";
+import navLogo from "../../assets/images/ulina-logo.png";
+import "./Header.css";
 const nav_links = [
   {
     path: "home",
@@ -20,6 +20,7 @@ const nav_links = [
 ];
 export default function Header() {
   const headerRef =useRef(null);
+  const menuRef =useRef(null)
   const  stickyHeaderFunc=()=>{
     window.addEventListener('scroll',() =>{
       if(document.body.scrollTop > 80 ||  document.documentElement.scrollTop > 80 ){
@@ -33,6 +34,8 @@ export default function Header() {
    stickyHeaderFunc()
    return () => window.removeEventListener('scroll',stickyHeaderFunc)
   },[])
+
+  const menuToggle =()=> menuRef.current.classList.toggle("nav_active")
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -41,7 +44,7 @@ export default function Header() {
             <div className="logo">
               <motion.img whileTap={{scale: 1.2}}  src={navLogo} alt="" />
             </div>
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={menuToggle}>
               <ul className="menu">
                 {nav_links.map((item, index) => (
                   <li className="nav_item" key={index}>
@@ -70,12 +73,13 @@ export default function Header() {
               <span>
                 <i class="ri-user-3-fill user_icons"></i>
               </span>
-            </div>
-            <div className="mobile_menu ">
-              <span>
+              <div className="mobile_menu ">
+              <span onClick={menuToggle}>
                 <i class="ri-menu-2-line"></i>
               </span>
             </div>
+            </div>
+            
           </div>
         </Row>
       </Container>
