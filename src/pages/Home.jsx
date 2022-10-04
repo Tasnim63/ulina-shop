@@ -13,15 +13,30 @@ import Clock from "../components/UI/Clock";
 export default function Home() {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
+  const [moblieProducts ,setMobileProducts] =useState([])
+  const [wirelessProducts ,setWirelessProducts] =useState([])
+  const [popularProducts ,setPopularProducts] =useState([])
   useEffect(() => {
     const filterdTendingProducts = products.filter(
       (item) => item.category === "chair"
     );
-    const filterdBestSalesProducts = products.filter(
+    const filterdBestSalesProducts  = products.filter(
       (item) => item.category === "sofa"
+    );
+    const filterdMoblieProducts = products.filter(
+      (item) => item.category === "mobile"
+    );
+    const filterdWirelessProducts = products.filter(
+      (item) => item.category === "wireless"
+    );
+    const filterdPopularProducts = products.filter(
+      (item) => item.category === "watch"
     );
     setTrendingProducts(filterdTendingProducts);
     setBestSalesProducts(filterdBestSalesProducts)
+    setMobileProducts(filterdMoblieProducts)
+    setWirelessProducts(filterdWirelessProducts);
+    setPopularProducts(filterdPopularProducts);
   }, []);
   const year = new Date().getFullYear();
   return (
@@ -92,6 +107,28 @@ export default function Home() {
                 </Col>
               </Row>
             </Container>
+      </section>
+      <section className="new_arrivals py-5">
+        <Container>
+          <Row>
+            <Col lg="12" className=" text-center">
+              <h2 className="section_title">New Arrivals</h2>
+            </Col>
+            <ProductsList data={moblieProducts} />
+            <ProductsList data={wirelessProducts} />
+          </Row>
+        </Container>
+      </section>
+      <section className="popular_category py-5">
+      <Container>
+          <Row>
+            <Col lg="12" className=" text-center">
+              <h2 className="section_title mb-4">Popular Category</h2>
+            </Col>
+            <ProductsList data={popularProducts} />
+            
+          </Row>
+        </Container>
       </section>
     </Helmet>
   );
