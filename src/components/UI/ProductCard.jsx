@@ -4,7 +4,22 @@ import { Col } from "reactstrap";
 import "../../styles/product-card.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../redux/slice/cartSlice";
 export default function ProductCard({ item }) {
+
+const dispatch=useDispatch()
+const addToCart=()=>{
+  dispatch(cartActions.addItems({
+    id:item.id,
+    productName:item.productName,
+    price:item.price,
+    image:item.imgUrl,
+  }));
+  alert('product add the cart')
+}
+
+
   return (
     <>
       <Col lg="3" md="4" className=" mb-2">
@@ -19,7 +34,7 @@ export default function ProductCard({ item }) {
             </div>
             <div className="product_card_bottom d-flex align-items-center justify-content-between p-2">
               <span className="price">${item.price}</span>
-              <motion.span whileTap={{ scale: 1.2 }}>
+              <motion.span whileTap={{ scale: 1.2 }} onClick={addToCart}>
                 <i class="ri-add-line"></i>
               </motion.span>
             </div>
