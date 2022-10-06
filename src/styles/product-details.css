@@ -15,3 +15,10 @@ color: coral;
 .product_price{
     font-size: 1.8rem;
 }
+.tab-wrapper{
+   color: var(--text-teal); 
+}
+.active_tab{
+    font-weight: 600;
+    color: var( --color-secondary);
+}

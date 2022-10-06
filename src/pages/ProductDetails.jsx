@@ -14,7 +14,7 @@ export default function ProductDetails() {
     productName,
     price,
     avgRating,
-    review,
+    reviews,
     description,
     shortDesc,
   } = product;
@@ -69,9 +69,12 @@ export default function ProductDetails() {
         <Container>
           <Row>
             <Col lg='12'>
-              <div className="tab-wrapper">
+              <div className="tab-wrapper d-flex align-items-center gap-5">
                 <h6>Description</h6>
-                <h6>Description</h6>
+                <h6>Reviews ({reviews.length})</h6>
+              </div>
+              <div className="tab_content">
+<p>{description}</p>
               </div>
             </Col>
           </Row>
