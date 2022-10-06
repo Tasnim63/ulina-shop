@@ -1,6 +1,6 @@
 import React from "react";
 import { Col } from "reactstrap";
-
+import { ToastContainer, toast } from 'react-toastify';
 import "../../styles/product-card.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ const addToCart=()=>{
     price:item.price,
     image:item.imgUrl,
   }));
-  alert('product add the cart')
+toast.success('product added successfully')
 }
 
 

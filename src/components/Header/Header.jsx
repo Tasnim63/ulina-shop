@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import navLogo from "../../assets/images/ulina-logo.png";
@@ -20,6 +21,7 @@ const nav_links = [
 ];
 export default function Header() {
   const headerRef =useRef(null);
+  const totalQuantity=useSelector(state => state.cart.totalQuantity)
   const menuRef =useRef(null)
   const  stickyHeaderFunc=()=>{
     window.addEventListener('scroll',() =>{
@@ -68,7 +70,7 @@ export default function Header() {
               </span>
               <span className="cart_icons">
                 <i class="ri-shopping-bag-fill"></i>
-                <span className="badge">1</span>
+                <span className="badge">{totalQuantity}</span>
               </span>
               <span>
                 <i class="ri-user-3-fill user_icons"></i>

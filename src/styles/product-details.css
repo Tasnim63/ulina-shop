@@ -1,0 +1,17 @@
+.product_details{
+    margin-top: 50px;
+}
+.product_details h2{
+font-size:1.6rem ;
+margin-bottom: 10px;
+}
+.product_rating span i{
+color: coral;
+}
+.product_rating p span{
+    color: coral;
+    font-weight: 500;
+}
+.product_price{
+    font-size: 1.8rem;
+}
