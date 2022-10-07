@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import navLogo from "../../assets/images/ulina-logo.png";
 import "./Header.css";
@@ -23,6 +23,7 @@ export default function Header() {
   const headerRef =useRef(null);
   const totalQuantity=useSelector(state => state.cart.totalQuantity)
   const menuRef =useRef(null)
+  const navigate=useNavigate()
   const  stickyHeaderFunc=()=>{
     window.addEventListener('scroll',() =>{
       if(document.body.scrollTop > 80 ||  document.documentElement.scrollTop > 80 ){
@@ -37,7 +38,10 @@ export default function Header() {
    return () => window.removeEventListener('scroll',stickyHeaderFunc)
   },[])
 
-  const menuToggle =()=> menuRef.current.classList.toggle("nav_active")
+  const menuToggle =()=> menuRef.current.classList.toggle("nav_active");
+  const navigateToCart =()=>{
+navigate('/cart')
+  }
   return (
     <header className="header" ref={headerRef}>
       <Container>
@@ -68,7 +72,7 @@ export default function Header() {
                 <i class="ri-heart-3-fill"></i>
                 <span className="badge">1</span>
               </span>
-              <span className="cart_icons">
+              <span className="cart_icons" onClick={navigateToCart}>
                 <i class="ri-shopping-bag-fill"></i>
                 <span className="badge">{totalQuantity}</span>
               </span>
