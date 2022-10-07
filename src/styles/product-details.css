@@ -15,10 +15,19 @@ color: coral;
 .product_price{
     font-size: 1.8rem;
 }
-.tab-wrapper{
+.tab-wrapper {
    color: var(--text-teal); 
+   cursor: pointer;
 }
 .active_tab{
     font-weight: 600;
     color: var( --color-secondary);
+}
+.review_wrapper ul li span{
+    margin-top: 5px;
+   color: coral; 
+   font-weight: 600;
+}
+.review_wrapper ul li p{
+  margin-top: 10px;  
 }

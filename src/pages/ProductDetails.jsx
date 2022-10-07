@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
@@ -7,6 +7,7 @@ import "../styles/product-details.css";
 import products from "../assets/data/products";
 import { motion } from "framer-motion";
 export default function ProductDetails() {
+  const [tab, setTab] = useState("desc");
   const { id } = useParams();
   const product = products.find((item) => item.id === id);
   const {
@@ -68,14 +69,50 @@ export default function ProductDetails() {
       <section className=" py-5">
         <Container>
           <Row>
-            <Col lg='12'>
+            <Col lg="12">
               <div className="tab-wrapper d-flex align-items-center gap-5">
-                <h6>Description</h6>
-                <h6>Reviews ({reviews.length})</h6>
+                <h6
+                  className={`${tab === "desc" ? "active_tab" : ""}`}
+                  onClick={() => setTab("desc")}
+                >
+                  Description
+                </h6>
+                <h6
+                  className={`${tab === "rev" ? "active_tab" : ""}`}
+                  onClick={() => setTab("rev")}
+                >
+                  Reviews ({reviews.length})
+                </h6>
               </div>
-              <div className="tab_content">
-<p>{description}</p>
-              </div>
+              {tab === "desc" ? (
+                <div className="tab_content py-4">
+                  <p>{description}</p>
+                </div>
+              ) : (
+                <div className=" product_review mt-5">
+                  <div className="review_wrapper pt-4">
+                    <ul>
+                      {reviews?.map((item, index) => (
+                        <li key={index} className="mb-4">
+                          <h6>Rimi Akter</h6>
+                          <span>{item.rating}(average rating)</span>
+                          <p>{item.text}</p>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="review_form">
+                      <form>
+                        <div className="form_group">
+                          <input type="text" placeholder="Enter Your Name" />
+                        </div>
+                        <div className="form_group">
+                         <span>1<i class="ri-star-fill"></i></span>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              )}
             </Col>
           </Row>
         </Container>
