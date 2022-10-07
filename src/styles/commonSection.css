@@ -10,3 +10,11 @@
      color: var(--text-teal);
      font-weight: 600;
  }
+ @media only screen and (max-width:768px) {
+    .common_section{
+        padding: 80px 0;
+    }
+    .common_section h1{
+        font-size: 1.4rem;
+    }
+ }

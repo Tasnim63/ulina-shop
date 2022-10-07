@@ -40,7 +40,7 @@ export default function Shop() {
     <section className=' py-5'>
       <Container>
         <Row>
-         <Col lg="3" md='3'>
+         <Col lg="3" md='6'>
           <div className="filter_widget">
             <select onClick={handleFilter}>
               <option>Filter By Category</option>
@@ -52,8 +52,8 @@ export default function Shop() {
             </select>
           </div>
           </Col> 
-         <Col lg="3" md='3'>
-         <div className="filter_widget">
+         <Col lg="3" md='6' >
+         <div className="filter_widget mb-4">
             <select>
               <option>Sort By</option>
               <option value="ascending">Ascending</option>
@@ -61,7 +61,7 @@ export default function Shop() {
             
             </select>
           </div></Col> 
-         <Col lg="6" md='6'>
+         <Col lg="6" md='12'>
           <div className="search_box">
             <input type="text" placeholder='Search...................' onChange={handleSearch}  />
             <span><i class="ri-search-2-line"></i></span>
