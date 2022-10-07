@@ -50,6 +50,10 @@ const Cart = () => {
 
 
 const Tr =({item})=>{
+  const dispatch=useDispatch();
+  const deleteProduct=()=>{
+    dispatch(cartActions.deleteItems(item.id))
+  }
   return  <tr>
   <td>
     <img src={item.imgUrl} alt="" />
@@ -57,7 +61,8 @@ const Tr =({item})=>{
   <td>{item.productName}</td>
   <td>${item.price}</td>
   <td>{item.quantity}</td>
-  <td><motion.i whileTap={{scale:1.2}} class="ri-delete-bin-7-fill"></motion.i></td>
+  <td><motion.i whileTap={{scale:1.2}} 
+  onClick={deleteProduct} class="ri-delete-bin-7-fill"></motion.i></td>
 </tr>
 }
 export default Cart
