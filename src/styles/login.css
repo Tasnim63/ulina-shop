@@ -1,0 +1,11 @@
+.auth_form{
+    background: var(--heading-text-color);
+    padding: 40px;
+    border-radius: 5px;
+}
+p a{
+color: var(--small-text-color);
+}
+p a:hover{
+color: var(--color-secondary);
+}
