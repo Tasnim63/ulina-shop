@@ -5,7 +5,8 @@ import CommoSection from '../components/UI/CommoSection';
 import '../styles/checkout.css';
 import { useSelector } from 'react-redux';
 export default function Checkout() {
-  const 
+  const  totalQty=useSelector(state => state.cart.totalQuantity);
+  const totalAmount=useSelector(state => state.cart.totalAmount)
   return (
    <Helmet title="Checkout">
    <CommoSection/>
@@ -41,13 +42,13 @@ export default function Checkout() {
         </Col>
         <Col lg="4">
           <div className="checkout_cart mt-4">
-            <h6>Total Qty: <span>0</span></h6>
-            <h6>Subtotal : <span>$120</span></h6>
+            <h6>Total Qty: <span>{totalQty}items</span></h6>
+            <h6>Subtotal : <span>${totalAmount}</span></h6>
             <h6>Shipping :<br/>
          Free shipping
             <span>$0</span></h6>
          
-            <h4>Total Cost: <span>$120</span></h4>
+            <h4>Total Cost: <span>${totalAmount}</span></h4>
             <button className=' buy_btn my-3 auth_btn w-100'>Place an order</button>
           </div>
          
