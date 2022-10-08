@@ -69,13 +69,13 @@ const Tr = ({ item }) => {
         <img src={item.imgUrl} alt="" />
       </td>
       <td>{item.productName}</td>
-      <td>${item.price}</td>
+      <td className=" fw-semibold">${item.price}</td>
       <td>{item.quantity}</td>
       <td>
         <motion.i
           whileTap={{ scale: 1.2 }}
           onClick={deleteProduct}
-          class="ri-delete-bin-7-fill"
+          class="ri-delete-bin-7-fill text-danger fs-5"
         ></motion.i>
       </td>
     </tr>
