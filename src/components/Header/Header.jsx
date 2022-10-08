@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Container, Row } from "reactstrap";
 import navLogo from "../../assets/images/ulina-logo.png";
 import "./Header.css";
@@ -76,8 +76,8 @@ navigate('/cart')
                 <i class="ri-shopping-bag-fill"></i>
                 <span className="badge">{totalQuantity}</span>
               </span>
-              <span>
-                <i class="ri-user-3-fill user_icons"></i>
+              <span className="navig_login">
+              <Link to="/login">  <i class="ri-user-3-fill user_icons"></i></Link>
               </span>
               <div className="mobile_menu ">
               <span onClick={menuToggle}>

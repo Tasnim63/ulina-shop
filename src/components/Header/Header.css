@@ -138,6 +138,9 @@ font-size: 1.5rem;
 }
 
 }
+.navig_login a:hover{
+color: var(--text-gray-900);
+}
 @media only screen and (max-width: 562px) {
     .hero_content{
         padding-top: 0;
