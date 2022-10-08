@@ -9,3 +9,7 @@ color: var(--small-text-color);
 p a:hover{
 color: var(--color-secondary);
 }
+.auth_form input[type='file']{
+color: white;
+cursor: pointer;
+}
