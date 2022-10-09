@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import  { auth } from "../firebase.config";
+
+
 import { Link } from "react-router-dom";
 import { Col, Container, FormGroup, Row } from "reactstrap";
 import "../styles/login.css";
